@@ -41,6 +41,9 @@ const playRound = (playerChoice) => {
     displayEnd();
   }
 };
+const computerSelect = () => {
+  return choices[Math.floor(Math.random() * choices.length)];
+};
 const displayEnd = () => {
   let playerWins = winners.filter((winner) => winner == "user").length;
   if (playerWins == 5) {
@@ -78,21 +81,10 @@ const tallyWins = () => {
   document.querySelector(".ties").textContent = `Ties: ${ties}`;
 };
 
-const computerSelect = () => {
-  return choices[Math.floor(Math.random() * choices.length)];
-};
 const checkWins = () => {
   const playerWins = winners.filter((winner) => winner == "user").length;
   const compWins = winners.filter((winner) => winner == "computer").length;
   return Math.max(playerWins, compWins);
-};
-
-const validateInput = (choice) => {
-  if (choices.includes(choice)) {
-    return true;
-  } else {
-    return false;
-  }
 };
 
 const checkWinner = (choiceP, choiceC) => {
@@ -107,10 +99,5 @@ const checkWinner = (choiceP, choiceC) => {
   } else {
     return "computer";
   }
-};
-const logWins = () => {
-  const playerWins = winners.filter((winner) => winner == "user").length;
-  const compWins = winners.filter((winner) => winner == "computer").length;
-  const ties = winners.filter((winner) => winner == "tie").length;
 };
 startGame();
