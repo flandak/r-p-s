@@ -1,5 +1,5 @@
 const choices = ["rock", "paper", "scissors"];
-const winners = [];
+let winners = [];
 const resetGame = () => {
   winners = [];
   document.querySelector(".playerScore").textContent = "Score: 0";
@@ -8,7 +8,7 @@ const resetGame = () => {
   document.querySelector(".winner").textContent = "";
   document.querySelector(".playerChoice").textContent = "";
   document.querySelector(".computerChoice").textContent = "";
-  document.querySelector(".reset").textContent = "none";
+  document.querySelector(".reset").style.display = "none";
 };
 
 const startGame = () => {
@@ -80,14 +80,6 @@ const tallyWins = () => {
 
 const computerSelect = () => {
   return choices[Math.floor(Math.random() * choices.length)];
-  //   const number = Math.floor(Math.random() * 3);
-  //   if (number === 0) {
-  //     return "rock";
-  //   } else if (number === 1) {
-  //     return "paper";
-  //   } else if (number === 2) {
-  //     return "scissors";
-  //   }
 };
 const checkWins = () => {
   const playerWins = winners.filter((winner) => winner == "user").length;
