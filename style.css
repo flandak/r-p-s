@@ -1,20 +1,40 @@
-body{
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.container {
+
+
+.reset {
+  display: none;
+  width: 200px;
+  background-color: #FEC959;
+  border-radius: 5px;
+  flex-direction: column;
+  align-items: center;
+  padding: 2px;
+  font-size: x-large;
+  padding: 5px;
+
+}
+
+.winnerDiv {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.reset{
-  display: none;
-}
-button {
+
+
+img {
   width: 100px;
-  height: auto;
-  background-color: rgb(131, 52, 131);
+
+}
+
+.playerImgs,
+.computerImgs {
   border-radius: 5px;
-  font-size: large;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  padding: 2px;
+  border: 2px solid rgb(105, 105, 105);
+  padding: 20px;
 }
